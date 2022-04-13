@@ -1,5 +1,5 @@
 # MakePizza
-> *This isn't the final product*
+> *This isn't the final product. The design is not fully ready yet*
 # Technologies used
 - Programming language: Kotlin
 - Tool for working with the network: Retrofit
