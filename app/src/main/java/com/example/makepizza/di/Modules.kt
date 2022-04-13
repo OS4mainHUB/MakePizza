@@ -3,7 +3,7 @@ package com.example.makepizza.di
 import com.example.makepizza.data.datasource.RemoteCategoriesDataSource
 import com.example.makepizza.data.datasource.RemotePizzaDataSource
 import com.example.makepizza.data.datasource.RemoteSalesDataSource
-import com.example.makepizza.data.network.ApiServiceApp
+import com.example.makepizza.data.network.AppService
 import com.example.makepizza.data.repository.CategoriesRepositoryImpl
 import com.example.makepizza.data.repository.PizzaRepositoryImpl
 import com.example.makepizza.data.repository.SalesRepositoryImpl
@@ -21,12 +21,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 import org.koin.dsl.module
 
 val serviceModule = module {
-    single<ApiServiceApp> {
+    single<AppService> {
         Retrofit.Builder()
-            .baseUrl(ApiServiceApp.BASE_URL)
+            .baseUrl(AppService.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .build().create(ApiServiceApp::class.java)
+            .build().create(AppService::class.java)
     }
 }
 

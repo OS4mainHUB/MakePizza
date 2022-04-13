@@ -5,7 +5,7 @@ import com.example.makepizza.data.model.PizzaResponse
 import com.example.makepizza.data.model.SaleResponse
 import retrofit2.http.GET
 
-interface ApiServiceApp {
+interface AppService {
     companion object{
         const val BASE_URL = "https://fastapi-pizza.herokuapp.com/"
     }
