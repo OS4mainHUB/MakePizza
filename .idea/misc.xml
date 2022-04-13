@@ -4,10 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidProject/MakePizza/app/src/main/res/drawable/ic_arrow_down.xml" value="0.3105" />
+        <entry key="..\:/AndroidProject/MakePizza/app/src/main/res/drawable/ic_menu_profile.xml" value="0.293" />
         <entry key="..\:/AndroidProject/MakePizza/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/MakePizza/app/src/main/res/layout/categories_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProject/MakePizza/app/src/main/res/layout/fragment_cart.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/MakePizza/app/src/main/res/layout/fragment_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProject/MakePizza/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProject/MakePizza/app/src/main/res/layout/pizza_item.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProject/MakePizza/app/src/main/res/layout/sales_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProject/MakePizza/app/src/main/res/layout/test.xml" value="0.2790328973444312" />
+        <entry key="..\:/AndroidProject/MakePizza/app/src/main/res/menu/bottom_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

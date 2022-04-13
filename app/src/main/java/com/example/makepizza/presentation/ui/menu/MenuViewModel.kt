@@ -1,6 +1,5 @@
 package com.example.makepizza.presentation.ui.menu
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -27,21 +26,29 @@ class MenuViewModel(
     private val _pizzaList = MutableLiveData<List<PizzaResponse>>()
     val pizzaList: LiveData<List<PizzaResponse>> = _pizzaList
 
+    private val _action = MutableLiveData<MenuAction>()
+    val action: LiveData<MenuAction> = _action
+
     init {
         load()
     }
 
-    private fun load(){
+    fun load(){
         viewModelScope.launch {
             try {
                 _salesList.value = getSalesUseCase.execute()
                 _categoriesList.value = getCategoriesUseCase.execute()
                 _pizzaList.value = getPizzaUseCase.execute()
-                Log.e("TAG", _pizzaList.value.toString())
             }catch (e: Throwable){
-                TODO()
+                _action.value = MenuAction.ShowError("Нестабильное соединение")
             }
+            _action.value = MenuAction.HideLoader
         }
+    }
+
+    sealed class MenuAction {
+        object HideLoader : MenuAction()
+        data class ShowError(val errorMessage: String): MenuAction()
     }
 
 }

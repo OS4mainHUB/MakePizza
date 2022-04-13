@@ -1,10 +1,10 @@
 package com.example.makepizza.data.datasource
 
 import com.example.makepizza.data.model.PizzaResponse
-import com.example.makepizza.data.network.AppService
+import com.example.makepizza.data.network.ApiServiceApp
 
 class RemotePizzaDataSource (
-    private val service: AppService
+    private val service: ApiServiceApp
 ) {
 
     suspend fun getPizzaList(): List<PizzaResponse> = service.getPizzaList()

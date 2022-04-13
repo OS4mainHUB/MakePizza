@@ -22,7 +22,6 @@ class SalesAdapter(
                 width = (itemView.resources.displayMetrics.widthPixels * 0.8).toInt()
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SalesViewHolder {
@@ -38,5 +37,4 @@ class SalesAdapter(
     }
 
     override fun getItemCount(): Int = data.value?.size ?: 0
-
 }
