@@ -1,4 +1,4 @@
-# MakePiza
+# MakePizza
 > *This isn't the final product*
 # Technologies used
 - Programming language: Kotlin
