@@ -11,3 +11,11 @@ data class CategoriesResponse(
     @SerializedName("id") val id: Int,
     @SerializedName("name") val name: String
 )
+
+data class PizzaResponse(
+    @SerializedName("id") val id: Int,
+    @SerializedName("name") val name: String,
+    @SerializedName("price") val price: Float,
+    @SerializedName("imageUrl") val imageUrl: String,
+    @SerializedName("description") val description: String
+)

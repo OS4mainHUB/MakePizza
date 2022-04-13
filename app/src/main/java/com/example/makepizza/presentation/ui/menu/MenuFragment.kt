@@ -13,7 +13,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MenuFragment : Fragment() {
 
     private lateinit var binding: FragmentMenuBinding
-    private val viewModel: HomeViewModel by viewModel()
+    private val viewModel: MenuViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
