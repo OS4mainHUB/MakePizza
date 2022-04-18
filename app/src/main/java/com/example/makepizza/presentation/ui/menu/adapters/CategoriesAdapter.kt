@@ -7,17 +7,20 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.makepizza.R
-import com.example.makepizza.data.model.CategoriesResponse
 import com.example.makepizza.databinding.CategoriesItemBinding
 import kotlin.properties.Delegates
 
-class CategoriesAdapter(
-    private val data: LiveData<List<CategoriesResponse>>
-): RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHolder>() {
+class CategoriesAdapter(private val onClick: (position: Int) -> Unit): RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHolder>() {
 
-    private var selectedItem by Delegates.observable(-1) { _, old, new ->
+    var data: List<String> = emptyList()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
+
+    var selectedItem by Delegates.observable(-1) { _, old, new ->
         if (old != new) {
-            data.value?.let {
+            data.let {
                 if (new in it.indices) {
                     notifyItemChanged(old)
                     notifyItemChanged(new)
@@ -28,27 +31,18 @@ class CategoriesAdapter(
 
     inner class CategoriesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = CategoriesItemBinding.bind(view)
-        fun bind(item: CategoriesResponse, isSelected: Boolean, position: Int) = with(binding){
-            chipCategory.text = item.name
+        fun bind(category: String, isSelected: Boolean, position: Int) = with(binding){
+            chipCategory.text = category
 
-            if (position == 0) {
+            chipCategory.setOnClickListener { onClick(position) }
+
+            if (isSelected) {
                 chipCategory.setTextColor(ContextCompat.getColor(itemView.context, R.color.pink))
                 chipCategory.chipBackgroundColor = ContextCompat.getColorStateList(itemView.context, R.color.pink_light)
             } else {
-                chipCategory.isEnabled = false
+                chipCategory.setTextColor(ContextCompat.getColor(itemView.context, R.color.gray))
+                chipCategory.chipBackgroundColor = ContextCompat.getColorStateList(itemView.context, R.color.white)
             }
-
-            //Оставил, тк если будет время, то вернусь к этому проекту и доведу до конца
-            //В целом, в API добавить данные разных разделов (каталогов) не сложно
-//            if (isSelected) {
-//                chipCategories.setTextColor(ContextCompat.getColor(itemView.context, R.color.pink))
-//                chipCategories.chipBackgroundColor = ContextCompat.getColorStateList(itemView.context, R.color.pink_light)
-//            } else {
-//                chipCategories.setTextColor(ContextCompat.getColor(itemView.context, R.color.button_gray_text))
-//                chipCategories.chipBackgroundColor  = ContextCompat.getColorStateList(itemView.context, R.color.gray)
-//            }
-//
-//            binding.chipCategories.setOnClickListener { selectedItem = position }
         }
     }
 
@@ -58,11 +52,11 @@ class CategoriesAdapter(
     }
 
     override fun onBindViewHolder(holder: CategoriesAdapter.CategoriesViewHolder, position: Int) {
-        data.value?.let{
+        data.let{
             val item = it[position]
             holder.bind(item, position == selectedItem, position)
         }
     }
 
-    override fun getItemCount(): Int = data.value?.size ?: 0
+    override fun getItemCount(): Int = data.size
 }

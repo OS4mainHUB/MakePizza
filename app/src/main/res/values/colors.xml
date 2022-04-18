@@ -13,4 +13,5 @@
     <color name="gray">#AAAAAD</color>
     <color name="button_gray_text">#C3C4C9</color>
     <color name="bottom_menu_gray">#F0F0F0</color>
+    <color name="light_gray">#F3F5F9</color>
 </resources>
