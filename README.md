@@ -1,5 +1,5 @@
 # MakePiza
-> *This isn't the final product*
+> *Redesigned functionality*
 # Technologies used
 - Programming language: Kotlin
 - Tool for working with the network: Retrofit
