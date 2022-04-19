@@ -1,4 +1,4 @@
-# MakePiza
+# MakePizza
 > *Someday HR will look at the GitHub account*
 # Technologies used
 - Programming language: Kotlin
