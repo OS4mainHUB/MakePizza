@@ -1,5 +1,5 @@
 # MakePiza
-> *Redesigned functionality*
+> *Someday HR will look at the GitHub account*
 # Technologies used
 - Programming language: Kotlin
 - Tool for working with the network: Retrofit
