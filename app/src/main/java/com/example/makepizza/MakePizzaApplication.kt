@@ -10,7 +10,7 @@ class MakePizzaApplication: Application() {
         super.onCreate()
         startKoin {
             androidContext(this@MakePizzaApplication)
-            modules(listOf(salesModule, categoriesModule, pizzaModule, serviceModule, viewmodelModule))
+            modules(listOf(salesModule, pizzaModule, serviceModule, viewmodelModule))
         }
     }
 }

@@ -1,6 +1,5 @@
-# MakePizza
-> *This isn't the final product. The design is not fully ready yet. I will add and update it.*
-> *Thanks to one IT company for the design!*
+# MakePiza
+> *Redesigned functionality*
 # Technologies used
 - Programming language: Kotlin
 - Tool for working with the network: Retrofit

@@ -1,17 +1,13 @@
 package com.example.makepizza.di
 
-import com.example.makepizza.data.datasource.RemoteCategoriesDataSource
-import com.example.makepizza.data.datasource.RemotePizzaDataSource
+import com.example.makepizza.data.datasource.RemoteContentCategoriesDataSource
 import com.example.makepizza.data.datasource.RemoteSalesDataSource
 import com.example.makepizza.data.network.AppService
-import com.example.makepizza.data.repository.CategoriesRepositoryImpl
-import com.example.makepizza.data.repository.PizzaRepositoryImpl
+import com.example.makepizza.data.repository.ContentCategoriesRepositoryImpl
 import com.example.makepizza.data.repository.SalesRepositoryImpl
-import com.example.makepizza.domain.interactor.GetCategoriesUseCase
-import com.example.makepizza.domain.interactor.GetPizzaUseCase
+import com.example.makepizza.domain.interactor.GetContentCategoriesUseCase
 import com.example.makepizza.domain.interactor.GetSalesUseCase
-import com.example.makepizza.domain.repository.CategoriesRepository
-import com.example.makepizza.domain.repository.PizzaRepository
+import com.example.makepizza.domain.repository.ContentCategoriesRepository
 import com.example.makepizza.domain.repository.SalesRepository
 import com.example.makepizza.presentation.ui.menu.MenuViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -36,18 +32,13 @@ val salesModule = module {
     single { GetSalesUseCase(get()) }
 }
 
-val categoriesModule = module {
-    single<CategoriesRepository> { CategoriesRepositoryImpl(get()) }
-    single { RemoteCategoriesDataSource(get()) }
-    single { GetCategoriesUseCase(get()) }
-}
 
 val pizzaModule = module {
-    single<PizzaRepository> { PizzaRepositoryImpl(get()) }
-    single { RemotePizzaDataSource(get()) }
-    single { GetPizzaUseCase(get()) }
+    single<ContentCategoriesRepository> { ContentCategoriesRepositoryImpl(get()) }
+    single { RemoteContentCategoriesDataSource(get()) }
+    single { GetContentCategoriesUseCase(get()) }
 }
 
 val viewmodelModule = module {
-    viewModel { MenuViewModel(get(), get(), get()) }
+    viewModel { MenuViewModel(get(), get()) }
 }
