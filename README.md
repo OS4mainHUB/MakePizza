@@ -1,5 +1,5 @@
 # MakePizza
-> *Someday HR will look at the GitHub account. This is only part of the application that is being developed*
+> *Someday HR will look at the GitHub account*
 # Technologies used
 - Programming language: Kotlin
 - Tool for working with the network: Retrofit
