@@ -10,5 +10,5 @@
   - MVVM
 - Dependency Injection Tool: Koin
 - Architecture of the entire application: Clean Architecture 
-- Desing: https://www.figma.com/file/aU7GYmE4izRKyMISGkK7Kg/LovePizza-v1.1?node-id=0%3A1
+- Desing: https://www.figma.com/file/Q6kkMEVOhAjyazxK22WiSF/MakePizza
 - API Docs: https://fastapi-pizza.herokuapp.com
